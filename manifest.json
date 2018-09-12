@@ -1,0 +1,38 @@
+﻿{
+  "name": "百度搜索广告过滤",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  // 简单描述
+  "description": "百度搜索广告过滤",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png"
+  },
+  // 浏览器小图表部分
+  "browser_action": {
+    "default_title": "百度搜索广告过滤",
+    "default_icon": "images/icon16.png"
+    //"default_popup": "html/calc.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/jquery-1.7.1.min.js",
+        "scripts/include.js"
+      ],
+      // 满足什么条件下使用该脚本
+      "matches": [
+        "http://www.baidu.com/*",
+        "https://www.baidu.com/*"
+      ],
+      // document_start document_end document_idel
+      "run_at": "document_start"
+    }
+  ],
+  // 应用协议页面
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'"
+}
