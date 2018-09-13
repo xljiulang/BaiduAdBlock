@@ -12,10 +12,14 @@
     "default_icon": "images/icon16.png",
     "default_popup": "index.html"
   },
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
   "content_scripts": [{
     "js": [
       "scripts/jquery-1.7.1.min.js",
-      "scripts/include.js"
+      "scripts/content.js"
     ],
     "matches": [
       "http://www.baidu.com/*",
@@ -24,7 +28,7 @@
     "run_at": "document_start"
   }],
   "permissions": [
-    "http://*/*",
-    "https://*/*"
+    "http://www.baidu.com/*",
+    "https://www.baidu.com/*"
   ]
 }
